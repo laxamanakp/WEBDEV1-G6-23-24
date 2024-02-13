@@ -1,0 +1,82 @@
+
+.add-to-cart-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.cart-sidebar {
+    width: 400px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.8s;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 100vh; /* Adjust the maximum height as needed */
+    z-index: 100000;
+}
+
+.close-cart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.cart-item-image {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container */
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cart-item-price {
+    font-size: 14px;
+    color: #888;
+}
+
+.cart-item-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.dish-minus-btn,
+.dish-add-btn {
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
