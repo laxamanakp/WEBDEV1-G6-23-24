@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (storedPassword === loginPassword) {
                 // Redirect to index.html after successful login
                 window.location.href = 'index.html';
+                // Shows an alert when successfully logged in
+                alert("You have successfully logged in!");
             } else {
                 // Display login error message if password doesn't match
                 loginError.textContent = 'Incorrect password.';
