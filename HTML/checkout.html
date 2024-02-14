@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Google Form</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('background.jpg'); /* Replace 'background.jpg' with your background image */
+            background-size: cover;
+        }
+
+        .iframe-wrapper {
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        iframe {
+            width: 640px;
+            height: 916px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <!-- Paste your iframe code here -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBqa_esS4kwPm-F-YbWr5vzkskwzzameeEZh7-WbdWHgWHnw/viewform?embedded=true" width="640" height="916" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBqa_esS4kwPm-F-YbWr5vzkskwzzameeEZh7-WbdWHgWHnw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
 </body>
 </html>
