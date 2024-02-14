@@ -1,71 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignIn&SignUp</title>
-    <link rel="stylesheet" type="text/css" href="./login.css" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="" class="sign-in-form">
-            <h2 class="title">Sign In</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" class="btn solid" />
-          </form>
+document.addEventListener('DOMContentLoaded', function() {
+    const sign_in_btn = document.querySelector("#sign-in-btn");
+    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
+    const signInForm = document.querySelector('.sign-in-form');
+    const signUpForm = document.querySelector('.sign-up-form');
 
+    sign_up_btn.addEventListener('click', () =>{
+        container.classList.add("sign-up-mode");
+    });
 
-          <form action="" class="sign-up-form">
-            <h2 class="title">Sign Up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Sign Up" class="btn solid" />
-          </form>
-        </div>
-      </div>
-      <div class="panels-container">
+    sign_in_btn.addEventListener('click', () =>{
+        container.classList.remove("sign-up-mode");
+    });
 
-        <div class="panel left-panel">
-            <div class="content">
-                <h3>New here?</h3>
-                <button class="btn transparent" id="sign-up-btn">Sign Up</button>
-            </div>
-            <img src="./img/log.svg" class="image" alt="">
-        </div>
+    signInForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Perform login validation here
+        const username = signInForm.querySelector('input[type="text"]').value;
+        const password = signInForm.querySelector('input[type="password"]').value;
+        // Example validation
+        if (username.trim() === '') {
+            alert('Please enter your username.');
+            return;
+        }
+        if (password.trim() === '') {
+            alert('Please enter your password.');
+            return;
+        }
+        // Check if the entered username exists in localStorage
+        const storedPassword = localStorage.getItem(username);
+        if (storedPassword) {
+            // If the username exists, check if the entered password matches the stored password
+            if (storedPassword === password) {
+                // Perform login authentication using the entered username and password
+                console.log('Logging in with username:', username, 'and password:', password);
+                // Redirect to index.html after successful login
+                window.location.href = 'index.html';
+                // Show alert for successful login
+                alert('Successfully signed in!');
+            } else {
+                // Display error message if password doesn't match
+                alert('Username / Password is Incorrect');
+            }
+        } else {
+            // Display error message if username doesn't exist
+            alert('Username or Password is Incorrect');
+        }
+    });
+    
 
-        <div class="panel right-panel">
-            <div class="content">
-                <h3>One of us?</h3>
-                <button class="btn transparent" id="sign-in-btn">Sign In</button>
-            </div>
-            <img src="./img/register.svg" class="image" alt="">
-        </div>
-      </div>
-    </div>
+    signUpForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Perform registration validation here
+        const username = signUpForm.querySelector('input[type="text"]').value;
+        const email = signUpForm.querySelector('input[type="email"]').value;
+        const password = signUpForm.querySelector('input[type="password"]').value;
+        // Example validation
+        if (username.trim() === '') {
+            alert('Please enter a username.');
+            return;
+        }
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email.');
+            return;
+        }
+        if (password.trim() === '') {
+            alert('Please enter a password.');
+            return;
+        }
+        // Here you can perform registration process with the entered username, email, and password
+        console.log('Registering with username:', username, ', email:', email, 'and password:', password);
+        // Redirect to sign in form after successful registration
+        container.classList.remove("sign-up-mode");
+    });
 
-    <script src="./login.js"></script>
-  </body>
-</html>
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+});
