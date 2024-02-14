@@ -15,7 +15,7 @@
             height: 100%;
             background-image: url('https://res.cloudinary.com/dpumqioki/image/upload/v1707942069/BGIMG.png'); /* Replace 'background.jpg' with your background image */
             background-size: cover;
-            
+            filter: blur(7px); /* Adjust the blur amount as needed */
         }
 
         .iframe-wrapper {
@@ -37,7 +37,13 @@
 <body>
     <div class="background"></div>
     <div class="iframe-wrapper">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBqa_esS4kwPm-F-YbWr5vzkskwzzameeEZh7-WbdWHgWHnw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBqa_esS4kwPm-F-YbWr5vzkskwzzameeEZh7-WbdWHgWHnw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" target="_top">Loading…</iframe>
     </div>
+    <script>
+        function onFormSubmit() {
+            alert("Check Out Successful");
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>
