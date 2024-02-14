@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Out</title>
+    <title>Embedded Google Form</title>
     <style>
         body, html {
             height: 100%;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url('https://res.cloudinary.com/dpumqioki/image/upload/v1707942069/BGIMG.png');
+        }
+
+        .background {
+            height: 100%;
+            background-image: url('https://res.cloudinary.com/dpumqioki/image/upload/v1707942069/BGIMG.png'); /* Replace 'background.jpg' with your background image */
             background-size: cover;
-            filter: blur(10px);
+            filter: blur(7px); /* Adjust the blur amount as needed */
         }
 
         .iframe-wrapper {
-            background-color: rgba(255, 255, 255, 0); /* Adjust the opacity as needed */
-            padding: 20px;
-            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
+            backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
         }
 
         iframe {
@@ -31,6 +35,7 @@
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <div class="iframe-wrapper">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBqa_esS4kwPm-F-YbWr5vzkskwzzameeEZh7-WbdWHgWHnw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
