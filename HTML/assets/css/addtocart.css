@@ -80,3 +80,25 @@
     cursor: pointer;
     padding: 5px 10px;
 }
+.checkout-button {
+    margin-right: 5px;
+    width: auto; /* Adjust width as needed */
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: 0.3s;
+    background: linear-gradient(145deg, #ffc954, #ffbc00);
+    box-shadow: inset 4px 4px 8px #d6a029, inset -4px -4px 8px #ffd837;
+    cursor: pointer;
+    padding: 5px 10px; /* Adjust padding as needed */
+}
+
+.checkout-button i {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.checkout-button:hover {
+    background: linear-gradient(145deg, #e3a92b, #ffc933);
+}

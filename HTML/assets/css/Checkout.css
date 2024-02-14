@@ -1,0 +1,9 @@
+.checkout {
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
