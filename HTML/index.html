@@ -74,6 +74,21 @@
                 </div>
             </div>
         </div>
+        <div> <a class="header-btn header-cart" onclick="toggleCart()">
+                                <i class="uil uil-shopping-bag"></i>
+                                <span class="cart-number" id="cartNumber">0</span>
+                            </a>
+                            <div id="cartSidebar" class="cart-sidebar">
+                                <span class="close-cart-btn" onclick="toggleCart()">&times;</span>
+                                <h2>Your Cart</h2>
+                                <ul id="cartItemList"></ul>
+                                <p>Total: PHP <span id="cartTotal">0</span></p>
+                            </div>
+                            </div>
+                            <a class="header-btn">
+                                <i class="uil uil-user-md" onclick="window.location.href='login.html'"></i>
+                            </a>
+    </div>
     </header>
     <!-- header ends  -->
 
