@@ -4,3 +4,4 @@
 #Lacerna, John Angelo M.
 #Laxamana, King Phillip A.
 #Rivera, Ethan Andrei S.
+https://laxamanakp.github.io/WEBDEV1-G6-23-24/HTML/index.html
