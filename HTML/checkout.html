@@ -9,10 +9,16 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            position: relative;
         }
 
         .background {
             height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Place the background behind other elements */
             background-image: url('https://res.cloudinary.com/dpumqioki/image/upload/v1707942069/BGIMG.png'); /* Replace 'background.jpg' with your background image */
             background-size: cover;
             filter: blur(7px); /* Adjust the blur amount as needed */
@@ -23,14 +29,14 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
-            backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+            position: relative; /* Ensure the wrapper stays within the body */
         }
 
         iframe {
             width: 640px;
             height: 916px;
             border: none;
+            z-index: 1; /* Place the iframe on top of the background */
         }
     </style>
 </head>
