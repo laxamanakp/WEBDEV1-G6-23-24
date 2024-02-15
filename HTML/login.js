@@ -14,33 +14,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     signInForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = signInForm.querySelector('input[type="text"]').value;
-        const password = signInForm.querySelector('input[type="password"]').value;
-        if (username.trim() === '') {
-            alert('Please enter your username.');
-            return;
-        }
-        if (password.trim() === '') {
-            alert('Please enter your password.');
-            return;
-        }
-        const storedPassword = localStorage.getItem(username);
-        if (storedPassword) {
-            if (storedPassword === password) {
-                console.log('Logging in with username:', username, 'and password:', password);
-                alert('Successfully signed in!');
-                window.location.href = 'index.html';
-
-
-            } else {
-
-                alert('Username / Password is Incorrect');
-            }
+    event.preventDefault();
+    const username = signInForm.querySelector('input[type="text"]').value;
+    const password = signInForm.querySelector('input[type="password"]').value;
+    if (username.trim() === '') {
+        alert('Please enter your username.');
+        return;
+    }
+    if (password.trim() === '') {
+        alert('Please enter your password.');
+        return;
+    }
+    const storedPassword = localStorage.getItem(username);
+    console.log('Stored Password:', storedPassword); // Debugging statement
+    console.log('Entered Password:', password); // Debugging statement
+    if (storedPassword) {
+        if (storedPassword === password) {
+            console.log('Logging in with username:', username, 'and password:', password);
+            alert('Successfully signed in!');
+            window.location.href = 'index.html';
         } else {
-            alert('Username or Password is Incorrect');
+            alert('Username / Password is Incorrect');
         }
-    });
+    } else {
+        alert('Username or Password is Incorrect');
+    }
+});
+
     
 
     signUpForm.addEventListener('submit', function(event) {
